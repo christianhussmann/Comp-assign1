@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Login">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoginViewController">
    <children>
       <TextField layoutX="226.0" layoutY="153.0" />
       <PasswordField layoutX="226.0" layoutY="215.0" />
@@ -32,7 +31,7 @@
       </Label>
       <ImageView fitHeight="70.0" fitWidth="75.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../billeder/EASV-med-ramme.jpg" />
+            <Image url="@../../Billeder/EASV-med-ramme.jpg" />
          </image>
       </ImageView>
    </children>
