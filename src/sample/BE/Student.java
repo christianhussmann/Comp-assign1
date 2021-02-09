@@ -3,8 +3,7 @@ package sample.BE;
 import java.util.ArrayList;
 
 public class Student {
-
-
+    
     private int semester;
     private String name;
     private String classYear;
@@ -19,7 +18,7 @@ public class Student {
         setName(name);
         setEducation(education);
     }
-    
+
     public int getAttendance() {
         return attendance;
     }
