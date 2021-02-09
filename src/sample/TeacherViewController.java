@@ -10,7 +10,7 @@ import javafx.scene.control.ComboBox;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ElevViewController implements Initializable {
+public class TeacherViewController implements Initializable {
 
     public ComboBox cmboxStudent;
 
