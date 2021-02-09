@@ -53,7 +53,7 @@
             </MenuBar>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="20.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../OneDrive/Billeder/f1.png" />
+                  <Image url="@/Comp-assign1/Billeder" />
                </image>
             </ImageView>
             <Label layoutX="179.0" layoutY="39.0" prefHeight="32.0" prefWidth="59.0" text="Navn:">
