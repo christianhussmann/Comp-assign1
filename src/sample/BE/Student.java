@@ -6,12 +6,13 @@ public class Student {
     
     private int semester;
     private String name;
+    private String lastName;
     private String classYear;
     private String education;
     private ArrayList<String> subjects;
     private int attendance;
 
-    public Student(int semester, String name, String classYear, String education, int attendance) {
+    public Student(int semester, String name, String lastName, String classYear, String education, int attendance) {
         setAttendance(attendance);
         setSemester(semester);
         setClassYear(classYear);
