@@ -34,7 +34,8 @@ public class LoginViewController implements Initializable {
             Parent root = FXMLLoader.load(getClass().getResource("../GUI/StudentView.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);
-            stage.show();
+            stage.close();
+            stage.setTitle("Attendance");
         }
         else if (UserName.getText().equals("lærer") && PassWord.getText().equals("lærer"));
         Parent root = FXMLLoader.load(getClass().getResource("../GUI/TeacherView.fxml"));
@@ -42,6 +43,7 @@ public class LoginViewController implements Initializable {
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
+        stage.setTitle("Attendance");
     }
     
     public void handleSelectStudent(ActionEvent actionEvent) {
