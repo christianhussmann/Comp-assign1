@@ -1,4 +1,4 @@
-package sample.Controllers;
+package sample.GUI.Controllers;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -10,7 +10,7 @@ import javafx.scene.control.ComboBox;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class TeacherViewController implements Initializable {
+public class StudentViewController implements Initializable {
 
     public ComboBox cmboxStudent;
 

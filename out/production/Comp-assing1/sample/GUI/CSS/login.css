@@ -1,0 +1,12 @@
+#usernameLabel{
+-fx-text-fill: black;
+}
+
+#passwordLabel{
+-fx-text-fill: black;
+}
+
+AnchorPane{
+    -fx-background-color: #99ccff;
+}
+
