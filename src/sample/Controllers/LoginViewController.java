@@ -9,7 +9,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.*;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,34 +18,29 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class LoginViewController implements Initializable {
-    @FXML
-    private TextField UserName;
+    public Button logIn;
 
     @FXML
-    private TextField PassWord;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
     }
 
     @FXML
-    public void login(ActionEvent event) throws Exception {
-        if (UserName.getText().equals("elev") && PassWord.getText().equals("elev")) {
-            Stage stage = new Stage();
+    public void login(ActionEvent event) {
+        try {
             Parent root = FXMLLoader.load(getClass().getResource("../GUI/StudentView.fxml"));
+            Stage stage = new Stage();
             Scene scene = new Scene(root);
             stage.setScene(scene);
-            stage.show();
-        }
-        else if (UserName.getText().equals("lærer") && PassWord.getText().equals("lærer"));
-        Parent root = FXMLLoader.load(getClass().getResource("../GUI/TeacherView.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
+            stage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
     }
-    
+}
     public void handleSelectStudent(ActionEvent actionEvent) {
+        
     }
+
 
 }
