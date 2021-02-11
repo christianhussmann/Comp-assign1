@@ -24,7 +24,6 @@ public class LoginViewController implements Initializable {
     public Button logIn;
     @FXML
     private TextField UserName;
-
     @FXML
     private TextField PassWord;
 
@@ -36,6 +35,7 @@ public class LoginViewController implements Initializable {
             Image image = new Image(file.toURI().toString());
             imageView.setImage(image);
         }
+
         @FXML
         public void login(ActionEvent event) throws Exception {
             if (UserName.getText().equals("elev") && PassWord.getText().equals("elev")) {
