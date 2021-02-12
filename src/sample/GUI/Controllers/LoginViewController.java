@@ -6,8 +6,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.*;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.ComboBox;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -29,6 +31,7 @@ public class LoginViewController implements Initializable {
 
 
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
             File file = new File("Billeder/EASV-med-ramme.jpg");
@@ -40,7 +43,7 @@ public class LoginViewController implements Initializable {
         public void login(ActionEvent event) throws Exception {
             if (UserName.getText().equals("elev") && PassWord.getText().equals("elev")) {
                 Stage stage = new Stage();
-                Parent root = FXMLLoader.load(getClass().getResource("../GUI/StudentView.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("/sample/GUI/StudentView.fxml"));
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.close();
@@ -49,7 +52,7 @@ public class LoginViewController implements Initializable {
 
 
         else if (UserName.getText().equals("lærer") && PassWord.getText().equals("lærer"));
-            Parent root = FXMLLoader.load(getClass().getResource("../GUI/TeacherView.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/sample/GUI/TeacherView.FXML"));
             Scene scene = new Scene(root);
             Stage stage = new Stage();
             stage.setScene(scene);
