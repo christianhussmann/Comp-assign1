@@ -7,12 +7,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.chart.*;
 import javafx.scene.control.ComboBox;
 
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class TeacherViewController implements Initializable {
 
     public ComboBox cmboxStudent;
+
 
     // Line chart
     public CategoryAxis x;
@@ -24,8 +26,9 @@ public class TeacherViewController implements Initializable {
     public NumberAxis yAxis;
     public CategoryAxis xAxis;
 
-
+    // Pie chart
     public PieChart pieChart;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -71,6 +74,7 @@ public class TeacherViewController implements Initializable {
     public void handleSelectStudent(ActionEvent actionEvent) {
         
     }
+
 
 
 }
