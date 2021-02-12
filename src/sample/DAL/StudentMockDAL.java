@@ -5,11 +5,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import sample.BE.Student;
 
-public class StudentDAL {
-
+public class StudentMockDAL {
     ObservableList<Student> allStudents;
 
-    public ObservableList<Student> loadStudents() {
+    public static ObservableList<Student> loadStudents() {
         ObservableList<Student> allStudents = FXCollections.observableArrayList();
 
         Student s1 = new Student(2, "Mathias", "Kristensen", "CSe_20A", "Datamatiker", 12);
