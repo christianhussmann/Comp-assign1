@@ -47,17 +47,17 @@ public class LoginViewController implements Initializable {
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.close();
+                stage.setTitle("elev");
+                stage.show();
+            } else if (UserName.getText().equals("lærer") && PassWord.getText().equals("lærer")) {
+                Parent root = FXMLLoader.load(getClass().getResource("/sample/GUI/TeacherView.FXML"));
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
+                stage.setScene(scene);
+                stage.show();
                 stage.setTitle("Attendance");
             }
-
-
-        else if (UserName.getText().equals("lærer") && PassWord.getText().equals("lærer"));
-            Parent root = FXMLLoader.load(getClass().getResource("/sample/GUI/TeacherView.FXML"));
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.show();
-            stage.setTitle("Attendance");
+            else System.out.println("error");
         }
 
 
