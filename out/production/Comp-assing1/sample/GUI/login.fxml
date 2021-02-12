@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="login.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.LoginViewController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@CSS/login.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GUI.Controllers.LoginViewController">
    <children>
       <TextField fx:id="UserName" layoutX="226.0" layoutY="153.0" />
       <PasswordField fx:id="PassWord" layoutX="226.0" layoutY="215.0" />
@@ -29,7 +29,7 @@
             <Font size="35.0" />
          </font>
       </Label>
-      <ImageView fitHeight="38.0" fitWidth="129.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true">
+      <ImageView fx:id="imageView" fitHeight="38.0" fitWidth="129.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true">
          <image>
             <Image url="@../../../Billeder/EASV-med-ramme.jpg" />
          </image>
