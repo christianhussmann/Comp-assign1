@@ -12,14 +12,19 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
+import java.awt.event.KeyListener;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class LoginViewController implements Initializable {
+
+
     @FXML
     private ImageView imageView;
     @FXML
@@ -28,6 +33,8 @@ public class LoginViewController implements Initializable {
     private TextField UserName;
     @FXML
     private TextField PassWord;
+    @FXML
+    private Label ErrorLabel;
 
 
 
@@ -42,23 +49,37 @@ public class LoginViewController implements Initializable {
         @FXML
         public void login(ActionEvent event) throws Exception {
             if (UserName.getText().equals("elev") && PassWord.getText().equals("elev")) {
-                Stage stage = new Stage();
-                Parent root = FXMLLoader.load(getClass().getResource("/sample/GUI/StudentView.fxml"));
-                Scene scene = new Scene(root);
-                stage.setScene(scene);
-                stage.close();
-                stage.setTitle("elev");
-                stage.show();
+                try {
+                    Parent root = FXMLLoader.load(getClass().getResource("/sample/GUI/StudentView.fxml"));
+                    Stage stage = new Stage();
+                    Scene scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.setTitle("Elev");
+                    stage.show();
+                } catch (IOException e){
+                    e.printStackTrace();
+                }
+
             } else if (UserName.getText().equals("lærer") && PassWord.getText().equals("lærer")) {
-                Parent root = FXMLLoader.load(getClass().getResource("/sample/GUI/TeacherView.FXML"));
-                Scene scene = new Scene(root);
-                Stage stage = new Stage();
-                stage.setScene(scene);
-                stage.show();
-                stage.setTitle("Attendance");
+                try{
+                    Parent root = FXMLLoader.load(getClass().getResource("/sample/GUI/TeacherView.FXML"));
+                    Stage stage = new Stage();
+                    Scene scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.setTitle("Attendence");
+                    stage.show();
+                }catch (IOException e){
+                    e.printStackTrace();
+                }
+            } else {
+                ErrorLabel.setText("Wrong Username ore Password");
             }
-            else System.out.println("error");
+
         }
 
-
+    public void reset(ActionEvent actionEvent) {
+        UserName.setText("");
+        PassWord.setText("");
+        ErrorLabel.setText("");
+    }
 }
