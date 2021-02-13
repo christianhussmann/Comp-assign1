@@ -5,9 +5,10 @@ import sample.BE.Student;
 import sample.DAL.StudentMockDAL;
 
 public class StudentBLLManager {
-    private final StudentMockDAL studentMockDAL;
+    private StudentMockDAL studentMockDAL = new StudentMockDAL();
 
-    public StudentBLLManager(StudentMockDAL studentMockDAL) {
+
+    public StudentBLLManager() {
         this.studentMockDAL = studentMockDAL;
     }
 

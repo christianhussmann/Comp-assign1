@@ -1,11 +1,14 @@
 package sample.BE;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 import java.util.ArrayList;
 
 public class Student {
     
     private int semester;
-    private String name;
+    private StringProperty name;
     private String lastName;
     private String classYear;
     private String education;
@@ -16,7 +19,7 @@ public class Student {
         setAttendance(attendance);
         setSemester(semester);
         setClassYear(classYear);
-        setName(name);
+        this.name = new SimpleStringProperty(name);
         setLastName(lastName);
         setEducation(education);
     }
@@ -27,6 +30,10 @@ public class Student {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public StringProperty nameProperty() {
+        return name;
     }
 
     public int getAttendance() {
@@ -46,11 +53,11 @@ public class Student {
     }
 
     public String getName() {
-        return name;
+        return name.get();
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name.set(name);
     }
 
     public String getClassYear() {

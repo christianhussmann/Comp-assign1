@@ -1,18 +1,24 @@
 package sample.GUI.Controllers;
 
+import com.sun.jdi.Value;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.*;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.util.StringConverter;
+import sample.BE.Student;
+import sample.BLL.StudentBLLManager;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class TeacherViewController implements Initializable {
 
-    public ComboBox cmboxStudent;
+    public ComboBox<Student> cmboxStudent;
 
     // Line chart
     public CategoryAxis x;
@@ -24,9 +30,21 @@ public class TeacherViewController implements Initializable {
     public NumberAxis yAxis;
     public CategoryAxis xAxis;
 
-
     public PieChart pieChart;
 
+    public Label labelName;
+    public Label labelEducation;
+    public Label labelClass;
+    public Label labelYear;
+    public Label labelSemester;
+
+
+    private StudentBLLManager studentBLLManager;
+    private Student selectedStudent = null;
+
+    public TeacherViewController() {
+        studentBLLManager = new StudentBLLManager();
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Line chart
@@ -65,12 +83,45 @@ public class TeacherViewController implements Initializable {
         pieChart.setLabelsVisible(true);
         pieChart.setStartAngle(180);
         pieChart.setData(pieChartData);
+
+        // Fills the combobox with a list of students
+        try {
+            cmboxStudent.setItems(studentBLLManager.loadStudents());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // Converting student object to string
+        cmboxStudent.setConverter(new StringConverter<Student>() {
+            @Override
+            public String toString(Student student) {
+                return student.getName() + " " + student.getLastName();
+            }
+
+            @Override
+            public Student fromString(String s) {
+                return null;
+            }
+        });
+
+        // Listener for the combobox
+        cmboxStudent.getSelectionModel().selectedItemProperty().addListener((observableValue, oldValue, newValue) -> {
+            selectedStudent = newValue;
+            updateInformation();
+        });
     }
 
+    // Update the labels
+    public void updateInformation() {
+        if (selectedStudent != null) {
+            labelName.setText(selectedStudent.getName() + " " + selectedStudent.getLastName());
+            labelEducation.setText(selectedStudent.getEducation());
+            labelClass.setText(selectedStudent.getClassYear());
+            labelYear.setText(Integer.toString(selectedStudent.getSemester()));
+        }
+    }
 
     public void handleSelectStudent(ActionEvent actionEvent) {
-        
+
     }
-
-
 }
