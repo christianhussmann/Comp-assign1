@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@CSS/login.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GUI.Controllers.LoginViewController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@CSS/login.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GUI.Controllers.LoginViewController">
    <children>
       <TextField fx:id="UserName" layoutX="226.0" layoutY="153.0" />
       <PasswordField fx:id="PassWord" layoutX="226.0" layoutY="215.0" />
@@ -23,7 +23,7 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <Button id="loginButton" fx:id="logIn" layoutX="499.0" layoutY="338.0" mnemonicParsing="false" onAction="#login" text="Login" />
+      <Button id="loginButton" fx:id="logIn" defaultButton="true" layoutX="499.0" layoutY="338.0" mnemonicParsing="false" onAction="#login" text="Login" />
       <Label layoutX="257.0" layoutY="63.0" text="Login">
          <font>
             <Font size="35.0" />
@@ -34,5 +34,7 @@
             <Image url="@../../../Billeder/EASV-med-ramme.jpg" />
          </image>
       </ImageView>
+      <Label fx:id="ErrorLabel" layoutX="216.0" layoutY="265.0" prefHeight="17.0" prefWidth="168.0" />
+      <Button fx:id="reset" layoutX="53.0" layoutY="338.0" mnemonicParsing="false" onAction="#reset" text="Reset" />
    </children>
 </AnchorPane>

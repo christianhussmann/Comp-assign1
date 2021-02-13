@@ -12,6 +12,7 @@ import javafx.util.StringConverter;
 import sample.BE.Student;
 import sample.BLL.StudentBLLManager;
 
+
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -19,6 +20,7 @@ import java.util.ResourceBundle;
 public class TeacherViewController implements Initializable {
 
     public ComboBox<Student> cmboxStudent;
+
 
     // Line chart
     public CategoryAxis x;
@@ -29,7 +31,7 @@ public class TeacherViewController implements Initializable {
     public BarChart barChart;
     public NumberAxis yAxis;
     public CategoryAxis xAxis;
-
+    
     public PieChart pieChart;
 
     public Label labelName;
@@ -122,6 +124,6 @@ public class TeacherViewController implements Initializable {
     }
 
     public void handleSelectStudent(ActionEvent actionEvent) {
-
     }
+
 }

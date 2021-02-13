@@ -5,6 +5,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import sample.BE.Student;
 
+import java.util.HashMap;
+
 public class StudentMockDAL {
     ObservableList<Student> allStudents;
 
@@ -23,4 +25,5 @@ public class StudentMockDAL {
         allStudents.add(s5);
         return allStudents;
     }
+
 }
