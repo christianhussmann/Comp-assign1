@@ -37,6 +37,7 @@ public class LoginViewController implements Initializable {
     @FXML
     private Label ErrorLabel;
     StudentMockDAL studentMockDAL = new StudentMockDAL();
+    public int StudentLoggedIn = 0;
 
 
 
@@ -54,11 +55,13 @@ public class LoginViewController implements Initializable {
             String Name = UserName.getText();
             String Code = PassWord.getText();
             boolean LoginData = false;
+            //public int StudentLoggedIn = 0;
 
 
             for(int i = 0; i < StudentMockDAL.loadStudents().size(); i++){
                 if(StudentMockDAL.loadStudents().get(i).getName().equals(Name) && StudentMockDAL.loadStudents().get(i).getCodeword().equals(Code)){
                     LoginData = true;
+                    StudentLoggedIn = i;
                 }
             }
 

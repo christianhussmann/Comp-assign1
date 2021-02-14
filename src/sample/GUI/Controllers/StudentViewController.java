@@ -6,11 +6,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.*;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import sample.DAL.StudentMockDAL;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class StudentViewController implements Initializable {
+    LoginViewController loginViewController = new LoginViewController();
 
     public ComboBox cmboxStudent;
 
@@ -27,8 +30,22 @@ public class StudentViewController implements Initializable {
 
     public PieChart pieChart;
 
+    public Label NavnLabel;
+    public Label UddannelseLabel;
+    public Label KlasseLabel;
+    public Label SemesterLabel;
+
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+
+        NavnLabel.setText(StudentMockDAL.loadStudents().get(loginViewController.StudentLoggedIn).getName());
+        UddannelseLabel.setText(StudentMockDAL.loadStudents().get(loginViewController.StudentLoggedIn).getEducation());
+        KlasseLabel.setText(StudentMockDAL.loadStudents().get(loginViewController.StudentLoggedIn).getClassYear());
+        SemesterLabel.setText(String.valueOf(StudentMockDAL.loadStudents().get(loginViewController.StudentLoggedIn).getSemester()));
+
         // Line chart
         XYChart.Series series = new XYChart.Series();
 

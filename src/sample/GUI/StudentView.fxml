@@ -18,7 +18,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<GridPane stylesheets="@CSS/StudentView.css" alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GUI.Controllers.StudentViewController">
+<GridPane alignment="center" hgap="10" stylesheets="@CSS/StudentView.css" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GUI.Controllers.StudentViewController">
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />
@@ -74,26 +74,6 @@
                   <Font size="22.0" />
                </font>
             </Label>
-            <Label fx:id="labelName" layoutX="239.0" layoutY="39.0" prefHeight="32.0" prefWidth="235.0">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Label>
-            <Label fx:id="labelEducation" layoutX="301.0" layoutY="71.0" prefHeight="32.0" prefWidth="188.0">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Label>
-            <Label fx:id="labelClass" layoutX="244.0" layoutY="103.0" prefHeight="32.0" prefWidth="211.0">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Label>
-            <Label fx:id="labelYear" layoutX="351.0" layoutY="135.0" prefHeight="32.0" prefWidth="197.0">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Label>
             <Button layoutX="20.0" layoutY="247.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Fraværende" />
             <Button layoutX="142.0" layoutY="247.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="59.0" text="Tilstede" />
             <LineChart fx:id="chartAttendance" layoutX="14.0" layoutY="560.0" prefHeight="400.0" prefWidth="1504.0">
@@ -113,6 +93,26 @@
               </yAxis>
             </BarChart>
             <PieChart fx:id="pieChart" layoutX="450.0" layoutY="87.0" prefHeight="309.0" prefWidth="405.0" />
+            <Label fx:id="NavnLabel" layoutX="238.0" layoutY="42.0" prefHeight="30.0" prefWidth="199.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="UddannelseLabel" layoutX="302.0" layoutY="74.0" prefHeight="30.0" prefWidth="109.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="KlasseLabel" layoutX="247.0" layoutY="105.0" prefHeight="30.0" prefWidth="95.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="SemesterLabel" layoutX="357.0" layoutY="138.0" prefHeight="25.0" prefWidth="21.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>
