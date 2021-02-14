@@ -14,6 +14,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
+import sample.DAL.StudentMockDAL;
 
 import java.awt.event.KeyListener;
 import java.io.File;
@@ -35,6 +36,7 @@ public class LoginViewController implements Initializable {
     private TextField PassWord;
     @FXML
     private Label ErrorLabel;
+    StudentMockDAL studentMockDAL = new StudentMockDAL();
 
 
 
@@ -48,7 +50,20 @@ public class LoginViewController implements Initializable {
 
         @FXML
         public void login(ActionEvent event) throws Exception {
-            if (UserName.getText().equals("elev") && PassWord.getText().equals("elev")) {
+
+            String Name = UserName.getText();
+            String Code = PassWord.getText();
+            boolean LoginData = false;
+
+
+            for(int i = 0; i < StudentMockDAL.loadStudents().size(); i++){
+                if(StudentMockDAL.loadStudents().get(i).getName().equals(Name) && StudentMockDAL.loadStudents().get(i).getCodeword().equals(Code)){
+                    LoginData = true;
+                }
+            }
+
+
+            if (LoginData) {
                 try {
                     Parent root = FXMLLoader.load(getClass().getResource("/sample/GUI/StudentView.fxml"));
                     Stage stage = new Stage();

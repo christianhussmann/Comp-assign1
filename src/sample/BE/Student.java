@@ -14,15 +14,30 @@ public class Student {
     private String education;
     private ArrayList<String> subjects;
     private int attendance;
+    private String codeword;
 
-    public Student(int semester, String name, String lastName, String classYear, String education, int attendance) {
+    public String getCodeword() {
+        return codeword;
+    }
+
+    public void setCodeword(String codeword) {
+        this.codeword = codeword;
+    }
+
+
+
+
+    public Student(int semester, String name, String lastName, String classYear, String education, int attendance, String codeword) {
         setAttendance(attendance);
         setSemester(semester);
         setClassYear(classYear);
         this.name = new SimpleStringProperty(name);
         setLastName(lastName);
         setEducation(education);
+        setCodeword(codeword);
     }
+
+
 
     public String getLastName() {
         return lastName;
