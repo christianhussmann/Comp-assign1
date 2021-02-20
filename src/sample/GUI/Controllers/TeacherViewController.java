@@ -9,7 +9,9 @@ import javafx.scene.chart.*;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.util.StringConverter;
+import sample.BE.CurrentClass;
 import sample.BE.Student;
+import sample.BLL.ClassBLLManager;
 import sample.BLL.StudentBLLManager;
 
 
@@ -39,8 +41,9 @@ public class TeacherViewController implements Initializable {
     public Label labelClass;
     public Label labelYear;
     public Label labelSemester;
+    public ComboBox<CurrentClass> cmboxClasses;
 
-
+    private ClassBLLManager classBLLManager;
     private StudentBLLManager studentBLLManager;
     private Student selectedStudent = null;
 
@@ -49,6 +52,8 @@ public class TeacherViewController implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+
         // Line chart
         XYChart.Series series = new XYChart.Series();
 
@@ -86,6 +91,23 @@ public class TeacherViewController implements Initializable {
         pieChart.setStartAngle(180);
         pieChart.setData(pieChartData);
 
+        try {
+            cmboxClasses.setItems(classBLLManager.loadClasses());
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        cmboxClasses.setConverter(new StringConverter<CurrentClass>() {
+            @Override
+            public String toString(CurrentClass currentClass) {
+                return currentClass.getClassYear();
+            }
+
+            @Override
+            public CurrentClass fromString(String s) {
+                return null;
+            }
+        });
+
         // Fills the combobox with a list of students
         try {
             cmboxStudent.setItems(studentBLLManager.loadStudents());
@@ -113,6 +135,7 @@ public class TeacherViewController implements Initializable {
         });
     }
 
+
     // Update the labels
     public void updateInformation() {
         if (selectedStudent != null) {
@@ -126,4 +149,8 @@ public class TeacherViewController implements Initializable {
     public void handleSelectStudent(ActionEvent actionEvent) {
     }
 
+
+    public void handleSelectClasses(ActionEvent actionEvent) {
+
+    }
 }

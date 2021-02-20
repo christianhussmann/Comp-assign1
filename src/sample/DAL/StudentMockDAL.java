@@ -7,6 +7,7 @@ import sample.BE.Student;
 
 import java.util.HashMap;
 
+
 public class StudentMockDAL {
     public ObservableList<Student> getAllStudents() {
         return allStudents;
@@ -15,6 +16,9 @@ public class StudentMockDAL {
     ObservableList<Student> allStudents;
 
     public static ObservableList<Student> loadStudents() {
+        return getStudents();
+    }
+    static ObservableList<Student> getStudents() {
         ObservableList<Student> allStudents = FXCollections.observableArrayList();
 
         Student s1 = new Student(2, "Mathias", "Kristensen", "CSe_20A", "Datamatiker", 12, "redhead");
@@ -29,5 +33,4 @@ public class StudentMockDAL {
         allStudents.add(s5);
         return allStudents;
     }
-
 }

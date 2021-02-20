@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 import sample.BE.Teacher;
 
 public class TeacherMockDal {
+
     ObservableList<Teacher> allTeachers;
 
     public ObservableList<Teacher> getAllTeachers() {
@@ -15,4 +16,5 @@ public class TeacherMockDal {
         allTeachers.add(t1);
         return allTeachers;
     }
+
 }
