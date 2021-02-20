@@ -49,6 +49,7 @@ public class TeacherViewController implements Initializable {
 
     public TeacherViewController() {
         studentBLLManager = new StudentBLLManager();
+        classBLLManager = new ClassBLLManager();
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
