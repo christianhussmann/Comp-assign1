@@ -8,6 +8,7 @@ import javafx.scene.chart.*;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import sample.DAL.StudentMockDAL;
+import sample.GUI.Model.StudentAttendanceModel;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -35,16 +36,16 @@ public class StudentViewController implements Initializable {
     public Label KlasseLabel;
     public Label SemesterLabel;
 
-
+    private StudentAttendanceModel sam = StudentAttendanceModel.getIntance();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-
-        NavnLabel.setText(StudentMockDAL.loadStudents().get(loginViewController.StudentLoggedIn).getName());
-        UddannelseLabel.setText(StudentMockDAL.loadStudents().get(loginViewController.StudentLoggedIn).getEducation());
-        KlasseLabel.setText(StudentMockDAL.loadStudents().get(loginViewController.StudentLoggedIn).getClassYear());
-        SemesterLabel.setText(String.valueOf(StudentMockDAL.loadStudents().get(loginViewController.StudentLoggedIn).getSemester()));
+            NavnLabel.setText(sam.getLoggedInStudent().getName());
+            UddannelseLabel.setText(sam.getLoggedInStudent().getEducation());
+            KlasseLabel.setText(sam.getLoggedInStudent().getClassYear());
+            //SemesterLabel.setText(sam.getLoggedInStudent().getSemester()));
+        // DER ER EN DER SKAL FIXE GETSEMESTER
 
         // Line chart
         XYChart.Series series = new XYChart.Series();
@@ -88,6 +89,7 @@ public class StudentViewController implements Initializable {
     public void handleSelectStudent(ActionEvent actionEvent) {
         
     }
+
 
 
 }

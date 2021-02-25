@@ -13,8 +13,10 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import sample.DAL.StudentMockDAL;
+import sample.GUI.Model.StudentAttendanceModel;
 
 import java.awt.event.KeyListener;
 import java.io.File;
@@ -36,8 +38,8 @@ public class LoginViewController implements Initializable {
     private TextField PassWord;
     @FXML
     private Label ErrorLabel;
+
     StudentMockDAL studentMockDAL = new StudentMockDAL();
-    public int StudentLoggedIn = 0;
 
 
 
@@ -52,6 +54,7 @@ public class LoginViewController implements Initializable {
         @FXML
         public void login(ActionEvent event) throws Exception {
 
+
             String Name = UserName.getText();
             String Code = PassWord.getText();
             boolean LoginData = false;
@@ -61,19 +64,23 @@ public class LoginViewController implements Initializable {
             for(int i = 0; i < StudentMockDAL.loadStudents().size(); i++){
                 if(StudentMockDAL.loadStudents().get(i).getName().equals(Name) && StudentMockDAL.loadStudents().get(i).getCodeword().equals(Code)){
                     LoginData = true;
-                    StudentLoggedIn = i;
+                    StudentAttendanceModel.getIntance().setLoggedInStudent(StudentMockDAL.loadStudents().get(i));
                 }
             }
 
 
             if (LoginData) {
                 try {
-                    Parent root = FXMLLoader.load(getClass().getResource("/sample/GUI/StudentView.fxml"));
+                    FXMLLoader loader = new FXMLLoader();
+                    loader.setLocation(getClass().getResource("/sample/GUI/StudentView.fxml"));
+                    GridPane layout = loader.load();
                     Stage stage = new Stage();
-                    Scene scene = new Scene(root);
+                    Scene scene = new Scene(layout);
                     stage.setScene(scene);
                     stage.setTitle("Elev");
                     stage.show();
+
+
                 } catch (IOException e){
                     e.printStackTrace();
                 }
