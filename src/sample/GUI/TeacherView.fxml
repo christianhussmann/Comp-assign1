@@ -19,7 +19,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<GridPane alignment="center" hgap="10" stylesheets="@CSS/TeacherView.css" vgap="10" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GUI.Controllers.TeacherViewController">
+<GridPane alignment="center" hgap="10" stylesheets="@CSS/TeacherView.css" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GUI.Controllers.TeacherViewController">
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />
@@ -116,6 +116,7 @@
             </BarChart>
             <PieChart fx:id="pieChart" layoutX="450.0" layoutY="87.0" prefHeight="309.0" prefWidth="405.0" />
             <ComboBox fx:id="cmboxClasses" layoutX="240.0" layoutY="207.0" onAction="#handleSelectClasses" prefWidth="150.0" promptText="Vælg klasse" />
+            <Button fx:id="btnClassList" layoutX="239.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleSelectClassList" prefHeight="25.0" prefWidth="93.0" text="Klasseliste" />
          </children>
       </AnchorPane>
    </children>

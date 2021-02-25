@@ -9,7 +9,7 @@ public class Student {
     
     private int semester;
     private StringProperty name;
-    private String lastName;
+    private StringProperty lastName;
     private String classYear;
     private String education;
     private ArrayList<String> subjects;
@@ -32,7 +32,7 @@ public class Student {
         setSemester(semester);
         setClassYear(classYear);
         this.name = new SimpleStringProperty(name);
-        setLastName(lastName);
+        this.lastName = new SimpleStringProperty(lastName);
         setEducation(education);
         setCodeword(codeword);
     }
@@ -40,15 +40,19 @@ public class Student {
 
 
     public String getLastName() {
-        return lastName;
+        return lastName.get();
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        this.lastName.set(lastName);
     }
 
     public StringProperty nameProperty() {
         return name;
+    }
+
+    public StringProperty lastNameProperty() {
+        return lastName;
     }
 
     public int getAttendance() {
