@@ -44,8 +44,7 @@ public class StudentViewController implements Initializable {
             NavnLabel.setText(sam.getLoggedInStudent().getName());
             UddannelseLabel.setText(sam.getLoggedInStudent().getEducation());
             KlasseLabel.setText(sam.getLoggedInStudent().getClassYear());
-            //SemesterLabel.setText(sam.getLoggedInStudent().getSemester()));
-        // DER ER EN DER SKAL FIXE GETSEMESTER
+            SemesterLabel.setText(Integer.toString(sam.getLoggedInStudent().getSemester()));
 
         // Line chart
         XYChart.Series series = new XYChart.Series();
