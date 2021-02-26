@@ -172,6 +172,11 @@ public class TeacherViewController implements Initializable {
 
     }
 
+    /**
+     *
+     * Shows the class list
+     * @throws IOException
+     */
     public void handleSelectClassList(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/sample/GUI/View/ClassListView.fxml"));
         Stage stage = new Stage();
