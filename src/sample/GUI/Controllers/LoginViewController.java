@@ -6,23 +6,18 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.chart.*;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import sample.DAL.StudentMockDAL;
 import sample.GUI.Model.StudentAttendanceModel;
 
-import java.awt.event.KeyListener;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class LoginViewController implements Initializable {
@@ -76,7 +71,7 @@ public class LoginViewController implements Initializable {
             if (LoginData) {
                 try {
                     FXMLLoader loader = new FXMLLoader();
-                    loader.setLocation(getClass().getResource("/sample/GUI/StudentView.fxml"));
+                    loader.setLocation(getClass().getResource("/sample/GUI/View/StudentView.fxml"));
                     GridPane layout = loader.load();
                     Stage stage = new Stage();
                     Scene scene = new Scene(layout);
@@ -93,7 +88,7 @@ public class LoginViewController implements Initializable {
                  */
             } else if (UserName.getText().equals("lærer") && PassWord.getText().equals("lærer")) {
                 try{
-                    Parent root = FXMLLoader.load(getClass().getResource("/sample/GUI/TeacherView.FXML"));
+                    Parent root = FXMLLoader.load(getClass().getResource("/sample/GUI/View/TeacherView.fxml"));
                     Stage stage = new Stage();
                     Scene scene = new Scene(root);
                     stage.setScene(scene);

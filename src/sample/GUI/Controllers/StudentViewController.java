@@ -7,13 +7,17 @@ import javafx.fxml.Initializable;
 import javafx.scene.chart.*;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import sample.DAL.StudentMockDAL;
 import sample.GUI.Model.StudentAttendanceModel;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class StudentViewController implements Initializable {
+
     LoginViewController loginViewController = new LoginViewController();
 
     public ComboBox cmboxStudent;
@@ -31,6 +35,7 @@ public class StudentViewController implements Initializable {
 
     public PieChart pieChart;
 
+    public ImageView imgStudent;
     public Label NavnLabel;
     public Label UddannelseLabel;
     public Label KlasseLabel;
@@ -82,6 +87,11 @@ public class StudentViewController implements Initializable {
         pieChart.setLabelsVisible(true);
         pieChart.setStartAngle(180);
         pieChart.setData(pieChartData);
+
+        // // Sets the image for the student
+        File file = new File("Billeder/DefaultBilledeFb.png");
+        Image image = new Image(file.toURI().toString());
+        imgStudent.setImage(image);
     }
 
 

@@ -16,6 +16,9 @@ public class ClassMockDAL {
         return getCurrentClasses();
     }
 
+    /**
+     * @return A list of subjects, which belongs to a class.
+     */
     static ObservableList<String> getSubjects() {
 
         ObservableList<String> subjects = FXCollections.observableArrayList();
@@ -27,17 +30,19 @@ public class ClassMockDAL {
 
     }
 
-
+    /**
+     * @return A list of classes
+     */
     static ObservableList<CurrentClass> getCurrentClasses() {
         ObservableList<CurrentClass> allCurrentClasses = FXCollections.observableArrayList();
 
         CurrentClass cc1 = new CurrentClass(2,"CSe_20A", "Datamatiker", getSubjects());
         allCurrentClasses.add(cc1);
-        CurrentClass cc2 = new CurrentClass(2,"CSe_20A", "Datamatiker", getSubjects());
+        CurrentClass cc2 = new CurrentClass(2,"CSe_20B", "Datamatiker", getSubjects());
         allCurrentClasses.add(cc2);
-        CurrentClass cc3 = new CurrentClass(2,"CSe_20A", "Datamatiker", getSubjects());
+        CurrentClass cc3 = new CurrentClass(4,"CSe_19A", "Datamatiker", getSubjects());
         allCurrentClasses.add(cc3);
-        CurrentClass cc4 = new CurrentClass(2,"CSe_20A", "Datamatiker", getSubjects());
+        CurrentClass cc4 = new CurrentClass(4,"CSe_19B", "Datamatiker", getSubjects());
         allCurrentClasses.add(cc4);
         return allCurrentClasses;
     }

@@ -18,6 +18,10 @@ public class StudentMockDAL {
     public static ObservableList<Student> loadStudents() {
         return getStudents();
     }
+
+    /**
+     * @return A list of students
+     */
     static ObservableList<Student> getStudents() {
         ObservableList<Student> allStudents = FXCollections.observableArrayList();
 

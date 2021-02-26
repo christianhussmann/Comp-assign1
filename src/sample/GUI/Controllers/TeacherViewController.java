@@ -1,6 +1,5 @@
 package sample.GUI.Controllers;
 
-import com.sun.jdi.Value;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -12,6 +11,8 @@ import javafx.scene.chart.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
 import sample.BE.CurrentClass;
@@ -20,9 +21,9 @@ import sample.BLL.ClassBLLManager;
 import sample.BLL.StudentBLLManager;
 
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class TeacherViewController implements Initializable {
@@ -49,6 +50,7 @@ public class TeacherViewController implements Initializable {
     public Label labelSemester;
     public ComboBox<CurrentClass> cmboxClasses;
     public Button btnClassList;
+    public ImageView imgStudent;
 
     private ClassBLLManager classBLLManager;
     private StudentBLLManager studentBLLManager;
@@ -98,6 +100,11 @@ public class TeacherViewController implements Initializable {
         pieChart.setLabelsVisible(true);
         pieChart.setStartAngle(180);
         pieChart.setData(pieChartData);
+
+        // Sets the image for the student
+        File file = new File("Billeder/DefaultBilledeFb.png");
+        Image image = new Image(file.toURI().toString());
+        imgStudent.setImage(image);
 
         // Fills the combobox with a list of classes
         try {
@@ -166,7 +173,7 @@ public class TeacherViewController implements Initializable {
     }
 
     public void handleSelectClassList(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/sample/GUI/ClassListView.FXML"));
+        Parent root = FXMLLoader.load(getClass().getResource("/sample/GUI/View/ClassListView.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene(root);
         stage.setScene(scene);
