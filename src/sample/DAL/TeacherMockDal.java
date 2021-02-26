@@ -12,7 +12,7 @@ public class TeacherMockDal {
 
         ObservableList<Teacher> allTeachers = FXCollections.observableArrayList();
 
-        Teacher t1 = new Teacher("Peter", "Stegger");
+        Teacher t1 = new Teacher("Hr.", "Lærer");
         allTeachers.add(t1);
         return allTeachers;
     }
