@@ -42,8 +42,9 @@ public class LoginViewController implements Initializable {
     StudentMockDAL studentMockDAL = new StudentMockDAL();
 
 
-
-
+    /**
+     * Sets the image for the login view
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
             File file = new File("Billeder/EASV-med-ramme.jpg");
@@ -51,14 +52,17 @@ public class LoginViewController implements Initializable {
             imageView.setImage(image);
         }
 
-        @FXML
+    /***
+     * Checks the student's usernames and passwords in order to log into the student view
+     * @throws Exception
+     */
+    @FXML
         public void login(ActionEvent event) throws Exception {
 
 
             String Name = UserName.getText();
             String Code = PassWord.getText();
             boolean LoginData = false;
-            //public int StudentLoggedIn = 0;
 
 
             for(int i = 0; i < StudentMockDAL.loadStudents().size(); i++){
@@ -84,7 +88,9 @@ public class LoginViewController implements Initializable {
                 } catch (IOException e){
                     e.printStackTrace();
                 }
-
+                /**
+                 * Login for teacherview
+                 */
             } else if (UserName.getText().equals("lærer") && PassWord.getText().equals("lærer")) {
                 try{
                     Parent root = FXMLLoader.load(getClass().getResource("/sample/GUI/TeacherView.FXML"));
@@ -102,6 +108,9 @@ public class LoginViewController implements Initializable {
 
         }
 
+    /**
+     * Empties the textfields
+     */
     public void reset(ActionEvent actionEvent) {
         UserName.setText("");
         PassWord.setText("");

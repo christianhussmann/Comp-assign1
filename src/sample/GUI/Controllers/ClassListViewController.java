@@ -22,6 +22,10 @@ public class ClassListViewController implements Initializable {
         studentBLLManager =  new StudentBLLManager();
     }
 
+    /**
+     * Loads students and lists them with their attendance
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
